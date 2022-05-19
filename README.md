@@ -12,7 +12,7 @@ WebViewVer for [Mojo Frontend](https://github.com/SpikeHD/MojoFrontend).
 
 ## Preview
 
-
+![](Preview/run_result.png)
 
 
 ## 使用方法
@@ -22,7 +22,7 @@ WebViewVer for [Mojo Frontend](https://github.com/SpikeHD/MojoFrontend).
   4. 输入 服务器ip 认证的key 进行连接
   5. Enjoy it！
 
-### 程序获取请到请到 [Realeases]([https://github.com/SwetyCore/MojoDesktop/realease](https://github.com/SwetyCore/MojoDesktop/releases)) 下载最近编译的版本。
+### 程序获取请到请到 [Realease](https://github.com/SwetyCore/MojoDesktop/releases) 下载最近编译的版本。
   程序暂时不完整
 
 ### 目前功能暂时不完善，请等待后续更新
