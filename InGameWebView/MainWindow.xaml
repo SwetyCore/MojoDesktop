@@ -22,15 +22,16 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal">
-                    <Label>服务器地址:</Label>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <!--<Label>服务器地址:</Label>
                     <TextBox MinWidth="200" x:Name="addr">https://127.0.0.1:25565</TextBox>
                     <Label>K2:</Label>
                     <TextBox MinWidth="200" x:Name="key">2020:1652970098:441aa4efdbf9d74821f0bcdfad0df39ec73c9af459a947c2a0c5a1535bc3b286</TextBox>
-                    <Button Click="Button_Click_1">尝试连接</Button>
+                    <Button Click="Button_Click_1">尝试连接</Button>-->
+                    <Button  Click="Button_Click_2" FontSize="17" Background="Transparent" BorderThickness="0">退出</Button>
                 </StackPanel>
 
-                <Wpf:WebView2 Grid.Row="1" x:Name="webview" VerticalAlignment="Center" Source="https://gc-mojoconsole.github.io/zh-cn/console.html" Height="743"/>
+                <Wpf:WebView2 Grid.Row="1" x:Name="webview" VerticalAlignment="Center" Source="https://gc-mojoconsole.github.io/zh-cn/console.html" Height="740"/>
 
             </Grid>
         </Border>

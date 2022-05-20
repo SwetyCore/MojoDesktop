@@ -103,7 +103,7 @@ namespace InGameWebView.Utils
                 if (request.Method == "POST")
                 {
                     //server.PostJson($"https://127.0.0.1:25565/mojoplus/api", o.ToString());
-                    r=Task.Run(() => server.PostJson($"{GlobalProps.server}/mojoplus/api", o.ToString()).Result).Result;
+                    r=Task.Run(() => server.PostJson($"{GlobalProps.server}", o.ToString()).Result).Result;
 
                 }
 

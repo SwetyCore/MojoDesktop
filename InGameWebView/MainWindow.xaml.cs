@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.IO;
 using static InGameWebView.Utils.APIHandler;
 using System.Windows.Media;
+using Microsoft.Win32;
 
 namespace InGameWebView
 {
@@ -28,11 +29,32 @@ namespace InGameWebView
         string internalUrl = "https://gc-mojoconsole.github.io/?lang=zh-cn&device_type=pc&ext=%7b%22loc%22%3a%7b%22x%22%3a512.050537109375%2c%22y%22%3a198.72210693359376%2c%22z%22%3a171.29444885253907%7d%2c%22platform%22%3a%22WinST%22%7d&game_version=CNRELWin2.6.0_R6708157_S7320343_D6731353&plat_type=pc";
         ResourceHandler resourceHandler;
         Routes routes = new Routes();
+
+
+        static void RegisterMyProtocol()  //myAppPath = full path to your application
+        {
+            var myAppPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            // RegistryKey key = Registry.ClassesRoot.OpenSubKey("gccomh");  //open myApp protocol's subkey
+            var KeyTest = Registry.CurrentUser.OpenSubKey("Software", true).OpenSubKey("Classes", true);
+            RegistryKey key = KeyTest.CreateSubKey("gccomh");
+            key.SetValue(string.Empty, "URL: GC-Command-Helper Protocol");
+            key.SetValue("URL Protocol", string.Empty);
+
+            key = key.CreateSubKey(@"shell\open\command");
+            key.SetValue(string.Empty, myAppPath + " " + "%1");
+            //%1 represents the argument - this tells windows to open this program with an argument / parameter
+            key.Close();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
 
+            RegisterMyProtocol();
+
             webview.CoreWebView2InitializationCompleted += WebView2_CoreWebView2InitializationCompleted;
+
+
         }
         private void WebView2_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
         {
@@ -143,13 +165,20 @@ namespace InGameWebView
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             GlobalProps.home = "https://gc-mojoconsole.github.io/zh-cn/console.html#";
-            GlobalProps.key = key.Text;
-            GlobalProps.server = addr.Text;
+            //GlobalProps.key = key.Text;
+            //GlobalProps.server = addr.Text;
 
             GlobalProps.NavigateTo(GlobalProps.home);
 
 
 
+
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -15,5 +15,7 @@ namespace InGameWebView
         public delegate void navigateTo(string url);
 
         public static navigateTo NavigateTo;
+
+        public static string MojoServer;
     }
 }
