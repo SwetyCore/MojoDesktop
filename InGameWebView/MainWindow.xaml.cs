@@ -154,6 +154,8 @@ namespace InGameWebView
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Show = false;
+            GlobalProps.home = "https://gc-mojoconsole.github.io/zh-cn/console.html#";
+
             new WindowHelper(this).Enable();
             GlobalProps.NavigateTo = Navigate;
         }
