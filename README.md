@@ -16,12 +16,16 @@ WebView Ver for [Mojo Frontend](https://github.com/SpikeHD/MojoFrontend).
 
 ![](Preview/run_result.png)
 
+## 环境要求
+
+ + WebView2
+ + .Net Framework 4.8
 
 ## 使用方法
 
   1. 下载解压，并启动一次本程序之后立即关闭
       > **请注意：请至少启动一次本程序之后 才能通过邮件内url直接启动本程序！**
-  2. 启动原神 
+  2. 启动原神 (必须以无边框方式启动）
   3. 把mojoconfig里面的useCDN 改为 true。
   4. 将cdnlink 改为 gccomh://open 
   5. 在游戏内输入指令 /mojo o 
